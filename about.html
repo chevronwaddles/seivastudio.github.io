@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Seiva Studio - A digital curiosity cabinet where time present and time past converge in São Pedro de Moel">
+    <title>About — Seiva Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --serif: 'Georgia', 'Times New Roman', serif;
+            --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            --max-width: 1200px;
+            --reading-width: 820px;
+            --column-gap: 24px;
+            --baseline: 8px;
+            --color-primary: #121212;
+            --color-secondary: #666;
+            --color-border: #e2e2e2;
+            --color-highlight: #ffe45e;
+            --color-bg-secondary: #fafafa;
+        }
+        
+        body {
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-primary);
+            background: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--color-border);
+            padding: calc(var(--baseline) * 2) 0;
+            margin-bottom: calc(var(--baseline) * 4);
+        }
+        
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            font-family: var(--serif);
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+        
+        .nav-back {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: calc(var(--baseline) * 8) 20px;
+            max-width: var(--reading-width);
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: calc(var(--baseline) * 4);
+        }
+        
+        .hero-quote {
+            font-size: 22px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #333;
+            margin-bottom: calc(var(--baseline) * 2);
+        }
+        
+        .hero-attribution {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--color-secondary);
+        }
+        
+        /* Main Content */
+        .content-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px calc(var(--baseline) * 12) 20px;
+        }
+        
+        /* Grid Sections */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: calc(var(--baseline) * 6) var(--column-gap);
+            margin-bottom: calc(var(--baseline) * 8);
+        }
+        
+        .section {
+            grid-column: span 12;
+        }
+        
+        .section-large {
+            grid-column: span 8;
+        }
+        
+        .section-small {
+            grid-column: span 4;
+        }
+        
+        .section h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: calc(var(--baseline) * 3);
+        }
+        
+        .section h3 {
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-bottom: calc(var(--baseline) * 2);
+        }
+        
+        .section p {
+            margin-bottom: calc(var(--baseline) * 3);
+        }
+        
+        /* Special Sections */
+        .place-section {
+            background: var(--color-bg-secondary);
+            padding: calc(var(--baseline) * 6);
+            margin: calc(var(--baseline) * 8) -20px;
+            position: relative;
+        }
+        
+        .place-section::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-primary);
+        }
+        
+        /* Quote Blocks */
+        .quote-block {
+            font-size: 20px;
+            line-height: 1.5;
+            font-style: italic;
+            padding: calc(var(--baseline) * 4) 0;
+            margin: calc(var(--baseline) * 4) 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        /* Lists */
+        .concept-list {
+            list-style: none;
+            margin-bottom: calc(var(--baseline) * 4);
+        }
+        
+        .concept-list li {
+            padding: calc(var(--baseline) * 2) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .concept-list strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: var(--baseline);
+        }
+        
+        .concept-list em {
+            font-family: var(--sans);
+            font-size: 15px;
+            color: var(--color-secondary);
+        }
+        
+        /* Footer Note */
+        .footer-note {
+            text-align: center;
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--color-secondary);
+            padding: calc(var(--baseline) * 8) 20px;
+            border-top: 2px solid var(--color-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-quote {
+                font-size: 18px;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: calc(var(--baseline) * 6);
+            }
+            
+            .section-large,
+            .section-small {
+                grid-column: span 1;
+            }
+            
+            .place-section {
+                margin-left: -20px;
+                margin-right: -20px;
+                padding: calc(var(--baseline) * 4) 20px;
+            }
+        }
+        
+        /* Seiva Animation */
+        @keyframes seiva-flow {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            50% {
+                opacity: 0.1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+        
+        .seiva-particle {
+            position: fixed;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(139, 69, 19, 0.2), transparent);
+            pointer-events: none;
+            animation: seiva-flow 25s infinite;
+        }
+        
+        /* Subtle animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .fade-in-delay {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Seiva particles -->
+    <div class="seiva-particle" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="seiva-particle" style="left: 50%; animation-delay: 8s;"></div>
+    <div class="seiva-particle" style="left: 80%; animation-delay: 16s;"></div>
+    
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">Seiva</a>
+            <a href="/" class="nav-back">← Back to Home</a>
+        </div>
+    </header>
+    
+    <section class="hero fade-in">
+        <h1>Time present and time past</h1>
+        <blockquote class="hero-quote">
+            "...aqui estou silenciosamente, pois jamais fui capaz de descobrir noutro lugar a serenidade tão necessária a minha alma. Só aqui, beijando no sol a tua face resplandecente, eu sou capaz de sentir as maravilhas que prodigamente criaste."
+        </blockquote>
+        <p class="hero-attribution">— João Frade Correia, Cântico de Desespero e de Esperança, 1970</p>
+    </section>
+    
+    <div class="content-container">
+        <div class="about-grid">
+            <!-- Introduction -->
+            <section class="section fade-in">
+                <p style="font-size: 20px; line-height: 1.6;">
+                    Seiva Studio emerges from the convergence of memory and presence in São Pedro de Moel, 
+                    a Portuguese coastal village where modernist architecture found its vernacular expression. 
+                    This digital curiosity cabinet grows from dialogues about place, time, and the slow dissolution 
+                    of architectural certainties.
+                </p>
+            </section>
+            
+            <!-- The Place -->
+            <section class="place-section section fade-in-delay">
+                <h2>The Place</h2>
+                <p>
+                    São Pedro de Moel rises between pine forest and Atlantic ocean, a landscape that breathes with 
+                    tidal rhythms and resinous memory. Here, in a house designed by António Baroseiro for my maternal 
+                    grandfather, words were written overlooking the sea—words that spoke of serenity found nowhere else, 
+                    of waves "ora a bater enfurecido nos rochedos, ora espreguiçando-se na areia em rendilhados caprichosos."
+                </p>
+                <p>
+                    This is where modernist architecture became normalized in the 1960s and 70s, where rational geometries 
+                    learned to speak with pine needles and salt air. Now, it is where those same structures undergo 
+                    premature dissolution, their decay revealing truths about dwelling, memory, and the practices that 
+                    sustain architectural meaning.
+                </p>
+                <p>
+                    To work here is to inhabit multiple temporalities simultaneously—the grandfather's contemplative 
+                    presence, the optimistic modernism of mid-century builders, the current moment of witnessing dissolution. 
+                    Each layer informs the research, each temporal fold reveals new dimensions of place.
+                </p>
+            </section>
+            
+            <!-- The Method -->
+            <section class="section section-large fade-in">
+                <h2>The Method</h2>
+                <p>
+                    This project demonstrates knowledge-building as conversation, following Richard Rorty's vision of 
+                    edification through dialogue. Each exchange between human and machine becomes a crystallization 
+                    of thought, captured as it emerges, honoring the non-linear nature of discovery.
+                </p>
+                <p>
+                    The method is the message: by making the research process transparent—showing how concepts evolve, 
+                    how insights emerge from unexpected connections, how understanding deepens through sustained 
+                    dialogue—we reveal scholarship as living practice rather than finished product.
+                </p>
+                <div class="quote-block">
+                    "A thesis within our thesis...the investigation made transparent, method become poetry, process as product."
+                </div>
+            </section>
+            
+            <!-- Operative Concepts -->
+            <section class="section section-small fade-in">
+                <h3>Operative Concepts</h3>
+                <ul class="concept-list">
+                    <li>
+                        <strong>Creative Exteriority</strong>
+                        <em>How creation transcends the creator</em>
+                    </li>
+                    <li>
+                        <strong>Witnessing Dissolution</strong>
+                        <em>Observing degradation as revelation</em>
+                    </li>
+                    <li>
+                        <strong>Oblique Entanglement</strong>
+                        <em>The chiasmic interweaving of time</em>
+                    </li>
+                    <li>
+                        <strong>Centripetal Collapse</strong>
+                        <em>When centers cease to hold</em>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- The Philosophy -->
+            <section class="section fade-in-delay">
+                <h2>The Philosophy</h2>
+                <p>
+                    A digital curiosity cabinet resists completion. Like the modernist houses it documents, 
+                    it exists in performance rather than stasis. Each new dialogue adds another room, 
+                    each crystallized insight opens unexpected doors.
+                </p>
+                <p>
+                    The name itself—<em>Seiva</em>—speaks to this organic principle. Sap flows through living wood, 
+                    carrying nutrients between roots and crown, past and future. This circulation mirrors our method: 
+                    ideas flow through conversation, crystallize temporarily in artifacts, then flow again.
+                </p>
+                <p>
+                    We honor incompleteness as methodology. Baroseiro's project "that never had the opportunity to 
+                    give wings to modernity" finds here its deferred flight—oblique, unexpected, alive in ways 
+                    its creator could never have imagined.
+                </p>
+            </section>
+            
+            <!-- The Archive -->
+            <section class="section fade-in">
+                <h3>The Living Archive</h3>
+                <p>
+                    What grows here is simultaneously personal and scholarly, rooted in place yet reaching outward. 
+                    Each fragment connects to others through visible and invisible threads—a grandfather's contemplation 
+                    echoing in contemporary field notes, modernist optimism conversing with present dissolution, 
+                    Portuguese particularity speaking to universal conditions of dwelling.
+                </p>
+                <p>
+                    This is research as it happens: tentative, recursive, honest about its own becoming. The archive 
+                    preserves not just findings but the finding itself—the moments of recognition, the productive 
+                    confusions, the unexpected connections that constitute real intellectual work.
+                </p>
+            </section>
+        </div>
+    </div>
+    
+    <footer class="footer-note">
+        <p>Seiva Studio grows through dialogue, branching unpredictably, flowing where it must.</p>
+        <p style="margin-top: var(--baseline);">A project in constant becoming.</p>
+    </footer>
+    
+    <script>
+        // Intersection Observer for staggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .fade-in-delay').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
